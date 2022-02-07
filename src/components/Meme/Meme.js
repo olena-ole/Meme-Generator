@@ -5,13 +5,20 @@ import memesData from '../../memesData';
 
 export default function Meme() {
 
-    const [memeImage, setMemeImage] = useState('');
+    const [meme, setMeme] = useState({
+        topText: '',
+        bottomText: '',
+        randomImage: 'http://i.imgflip.com/1bij.jpg'
+    });
+
+    const [allMemeImages, setAllMemeImages] = useState(memesData);
 
     function getNewImage(e) {
         e.preventDefault();
-        const memesArr = memesData.data.memes;
+        const memesArr = allMemeImages.data.memes;
         const randomIndex = Math.floor(Math.random() * memesArr.length);
-        setMemeImage(memesArr[randomIndex].url);
+        const url = memesArr[randomIndex].url;
+        setMeme(prev => ({...prev, randomImage: url}));
     }
 
     return (
@@ -23,7 +30,7 @@ export default function Meme() {
                 </div>
                 <button className="form--submit" onClick={getNewImage}>Get a new meme image</button>
             </form>
-            {memeImage && <img src={memeImage} className="meme--img" alt="random meme" />}
+            <img src={meme.randomImage} className="meme--img" alt="random meme" />
         </main>
     )
 }
