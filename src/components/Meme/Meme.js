@@ -30,7 +30,12 @@ export default function Meme() {
                 </div>
                 <button className="form--submit" onClick={getNewImage}>Get a new meme image</button>
             </form>
-            <img src={meme.randomImage} className="meme--img" alt="random meme" />
+            {/* <img src={meme.randomImage} className="meme--image" alt="random meme" /> */}
+            <div className="meme">
+                <img src={meme.randomImage} className="meme--image" alt="random meme"/>
+                <h2 className="meme--text top">One does not simply</h2>
+                <h2 className="meme--text bottom">Walk into Mordor</h2>
+            </div>
         </main>
     )
 }
