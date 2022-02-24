@@ -14,8 +14,8 @@ export default function Meme() {
 
     useEffect(() => {
         fetch('https://api.imgflip.com/get_memes')
-        .then(res => res.json())
-        .then(data => setAllMemeImages(data.data.memes))
+            .then(res => res.json())
+            .then(data => setAllMemeImages(data.data.memes))
     }, [])
 
     function handleChange(e) {
@@ -60,4 +60,4 @@ export default function Meme() {
             </div>
         </main>
     )
-}
+};

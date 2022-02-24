@@ -9,6 +9,6 @@ function App() {
       <Meme />
     </div>
   );
-}
+};
 
 export default App;

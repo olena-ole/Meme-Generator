@@ -11,4 +11,4 @@ export default function Header() {
             <p className="header--projectNo">React Course - Project 3</p>
         </header>
     )
-}
+};
